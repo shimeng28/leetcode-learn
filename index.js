@@ -1,4 +1,4 @@
-const isValid = require('./files/20.有效的括号');
+const simplifyPath = require('./files/71.简化路径');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -31,5 +31,5 @@ const displayList = (header) => {
 };
 
 
-const str = "()";
-console.log(isValid(str));
+const str = "/a/../../b/../c//.//";
+console.log(simplifyPath(str));
