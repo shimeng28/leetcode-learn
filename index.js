@@ -1,4 +1,4 @@
-const simplifyPath = require('./files/71.简化路径');
+const preorderTraversal = require('./files/144.二叉树的前序遍历');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -30,6 +30,30 @@ const displayList = (header) => {
   console.log(result);
 };
 
+const createTree = (arr) => {
+  const TreeNode = function (val) {
+    this.val = val;
+    this.left = this.right = null;
+  }
 
-const str = "/a/../../b/../c//.//";
-console.log(simplifyPath(str));
+  const _createTree = (list, val) => {
+    if (typeof val !== 'number') {
+      return null;
+    }
+    const currNode = new TreeNode(val);
+    const leftVal = list.shift();
+    const rightVal = list.shift();
+    currNode.left = _createTree(list, leftVal);
+    currNode.right = _createTree(list, rightVal);
+    return currNode;
+  }
+  const nodeVal = arr.shift();
+  return _createTree(arr, nodeVal);
+};
+
+
+
+
+const str = [1, null, 2, 3];
+const tree = createTree(str);
+console.log(preorderTraversal(tree));
