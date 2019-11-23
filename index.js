@@ -1,4 +1,4 @@
-const preorderTraversal = require('./files/144.二叉树的前序遍历');
+const postorderTraversal = require('./files/145.二叉树的后序遍历');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,4 +56,4 @@ const createTree = (arr) => {
 
 const str = [1, null, 2, 3];
 const tree = createTree(str);
-console.log(preorderTraversal(tree));
+console.log(postorderTraversal(tree));
