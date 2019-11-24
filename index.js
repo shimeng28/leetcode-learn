@@ -1,4 +1,4 @@
-const ladderLength = require('./files/127.单词接龙');
+const topKFrequent = require('./files/347.前-k-个高频元素');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,7 +56,6 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-let beginWord = "hit";
-let endWord = "cog";
-let wordList = ["hot","dot","dog","lot","log"];
-console.log(ladderLength(beginWord, endWord, wordList));
+const nums = [1, 2, 3, 4, 5, 6, 7];
+const k = 4;
+console.log(topKFrequent(nums, k));
