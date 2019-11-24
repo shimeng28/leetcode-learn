@@ -1,4 +1,4 @@
-const postorderTraversal = require('./files/145.二叉树的后序遍历');
+const ladderLength = require('./files/127.单词接龙');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -54,6 +54,9 @@ const createTree = (arr) => {
 
 
 
-const str = [1, null, 2, 3];
-const tree = createTree(str);
-console.log(postorderTraversal(tree));
+// const str = [1, null, 2, 3];
+// const tree = createTree(str);
+let beginWord = "hit";
+let endWord = "cog";
+let wordList = ["hot","dot","dog","lot","log"];
+console.log(ladderLength(beginWord, endWord, wordList));
