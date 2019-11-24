@@ -1,4 +1,4 @@
-const topKFrequent = require('./files/347.前-k-个高频元素');
+const mergeKLists = require('./files/23.合并k个排序链表');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -58,4 +58,4 @@ const createTree = (arr) => {
 // const tree = createTree(str);
 const nums = [1, 2, 3, 4, 5, 6, 7];
 const k = 4;
-console.log(topKFrequent(nums, k));
+console.log(mergeKLists([]));
