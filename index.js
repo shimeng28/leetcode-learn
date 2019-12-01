@@ -1,4 +1,4 @@
-const minDepth = require('./files/111.二叉树的最小深度');
+const binaryTreePaths = require('./files/257.二叉树的所有路径');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,6 +56,10 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [3,9,20,null,null,15,7];
+const nums = [1,2,3,null,5];
 const tree = createTree(nums);
-console.log(minDepth(tree));
+console.log(binaryTreePaths(tree));
+
+const fs = require('fs');
+const path = require('path');
+console.log(fs.readdirSync(path.resolve(process.cwd(), './files')).length);
