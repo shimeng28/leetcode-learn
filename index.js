@@ -1,4 +1,4 @@
-const mergeKLists = require('./files/23.合并k个排序链表');
+const minDepth = require('./files/111.二叉树的最小深度');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,6 +56,6 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [1, 2, 3, 4, 5, 6, 7];
-const k = 4;
-console.log(mergeKLists([]));
+const nums = [3,9,20,null,null,15,7];
+const tree = createTree(nums);
+console.log(minDepth(tree));
