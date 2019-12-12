@@ -60,7 +60,27 @@
  * @return {boolean}
  */
 var isValidBST = function(root) {
-    
+  if (!root) return true;
+  let prev = null;
+  let node = root;
+  const stack = [];
+  while (node || stack.length) {
+    while (node) {
+      stack.push(node);
+      node = node.left;
+    }
+
+    const currNode = stack.pop();
+    if (prev && currNode.val <= prev.val) {
+      return false;
+    }
+    prev = currNode;
+    node = currNode.right;
+  }
+
+  return true;
 };
+
+// module.exports = isValidBST;
 // @lc code=end
 

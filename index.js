@@ -1,4 +1,4 @@
-const lowestCommonAncestor = require('./files/235.二叉搜索树的最近公共祖先');
+const isValidBST = require('./files/98.验证二叉搜索树');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,7 +56,7 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [3,1,4,null,2];
+const nums = [10,5,15,null,null,6,20];
 // const count = -5;
 const tree = createTree(nums);
-console.log(lowestCommonAncestor(tree, { val: 2 }, { val: 3 }));
+console.log(isValidBST(tree));
