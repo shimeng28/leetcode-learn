@@ -1,4 +1,4 @@
-const binaryTreePaths = require('./files/257.二叉树的所有路径');
+const lowestCommonAncestor = require('./files/235.二叉搜索树的最近公共祖先');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -56,10 +56,7 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [1,2,3,null,5];
+const nums = [3,1,4,null,2];
+// const count = -5;
 const tree = createTree(nums);
-console.log(binaryTreePaths(tree));
-
-const fs = require('fs');
-const path = require('path');
-console.log(fs.readdirSync(path.resolve(process.cwd(), './files')).length);
+console.log(lowestCommonAncestor(tree, { val: 2 }, { val: 3 }));
