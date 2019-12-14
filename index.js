@@ -1,4 +1,4 @@
-const deleteNode = require('./files/450.删除二叉搜索树中的节点');
+const sortedArrayToBST = require('./files/108.将有序数组转换为二叉搜索树');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -58,7 +58,7 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [5,3,6,2,4,null,7];
+const nums = [-10,-3,0,5,9];
 const count = 3;
 const tree = createTree(nums);
-console.log(deleteNode(tree, count));
+console.log(sortedArrayToBST(nums));
