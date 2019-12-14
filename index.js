@@ -1,4 +1,4 @@
-const sortedArrayToBST = require('./files/108.将有序数组转换为二叉搜索树');
+const lowestCommonAncestor = require('./files/236.二叉树的最近公共祖先');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -42,7 +42,7 @@ const createTree = (arr) => {
   const getRightChildIndex = (n) => 2 * n + 2;
 
   const _createTree = (index) => {
-    if (index > len - 1) {
+    if (index > len - 1 || typeof arr[index] !== 'number') {
       return null;
     }
     const currNode = new TreeNode(arr[index]);
@@ -54,11 +54,17 @@ const createTree = (arr) => {
 };
 
 
+const preOrder = (root) => {
+  if (!root) return null;
 
+  preOrder(root.left);
+  preOrder(root.right);
+  console.log(root.val);
+};
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [-10,-3,0,5,9];
-const count = 3;
+const nums = [3,5,1,6,2,0,8,null,null,7,4];
+const count = 1;
 const tree = createTree(nums);
-console.log(sortedArrayToBST(nums));
+preOrder(tree, 5, 1);
