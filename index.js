@@ -1,4 +1,4 @@
-const isValidBST = require('./files/98.验证二叉搜索树');
+const deleteNode = require('./files/450.删除二叉搜索树中的节点');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -31,24 +31,26 @@ const displayList = (header) => {
 };
 
 const createTree = (arr) => {
+  const len = arr.length;
   const TreeNode = function (val) {
     this.val = val;
     this.left = this.right = null;
   }
 
-  const _createTree = (list, val) => {
-    if (typeof val !== 'number') {
+  const getLeftChildIndex = (n) => 2 * n + 1;
+
+  const getRightChildIndex = (n) => 2 * n + 2;
+
+  const _createTree = (index) => {
+    if (index > len - 1) {
       return null;
     }
-    const currNode = new TreeNode(val);
-    const leftVal = list.shift();
-    const rightVal = list.shift();
-    currNode.left = _createTree(list, leftVal);
-    currNode.right = _createTree(list, rightVal);
+    const currNode = new TreeNode(arr[index]);
+    currNode.left = _createTree(getLeftChildIndex(index));
+    currNode.right = _createTree(getRightChildIndex(index));
     return currNode;
   }
-  const nodeVal = arr.shift();
-  return _createTree(arr, nodeVal);
+  return _createTree(0);
 };
 
 
@@ -56,7 +58,7 @@ const createTree = (arr) => {
 
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
-const nums = [10,5,15,null,null,6,20];
-// const count = -5;
+const nums = [5,3,6,2,4,null,7];
+const count = 3;
 const tree = createTree(nums);
-console.log(isValidBST(tree));
+console.log(deleteNode(tree, count));
