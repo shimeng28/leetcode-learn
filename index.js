@@ -1,4 +1,4 @@
-const lowestCommonAncestor = require('./files/236.二叉树的最近公共祖先');
+const combinationSum3 = require('./files/216.组合总和-iii');
 
 const createList = (arr) => {
   const len = arr.length;
@@ -67,4 +67,5 @@ const preOrder = (root) => {
 const nums = [3,5,1,6,2,0,8,null,null,7,4];
 const count = 1;
 const tree = createTree(nums);
-preOrder(tree, 5, 1);
+
+console.log(combinationSum3(3, 9));
