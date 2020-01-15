@@ -54,14 +54,6 @@ const createTree = (arr) => {
 };
 
 
-const preOrder = (root) => {
-  if (!root) return null;
-
-  preOrder(root.left);
-  preOrder(root.right);
-  console.log(root.val);
-};
-
 // const str = [1, null, 2, 3];
 // const tree = createTree(str);
 const nums = [3,5,1,6,2,0,8,null,null,7,4];
